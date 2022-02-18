@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> ToDo List</title>
+    <style>
+        body{
+            text-align: center;
+            background:url("img/goodimg.jpg");
+            background-size: 100% 721px;
+            margin: 0px;
+            
+        }
+    	#head{
+            position: relative;
+            top: 0%;
+            
+            height: 8%;
+            
+            color: rgb(255, 0, 0);
+            padding-left: 1%;
+            font-size: 45px;
+        }
+        #listbox{
+            position: absolute;
+            top: 35%;
+            left: 29.87%;
+            height: 50%;
+            border: 2px solid rgb(104, 0, 0);
+            width: 40%;
+            text-align: center;
+            border-radius: 10px;
+            background-color: rgba(2, 2, 90, 0.637);
+        }
+        .l{
+            border: 2px solid darkcyan;
+            position: relative;
+            width: 70%;
+            left: 15%;
+            height: 10%;
+            border-radius: 5px;
+            font-size: 30px;
+            text-align: left;
+            background-color: rgba(0, 121, 177, 0.644);
+            color: rgb(255, 255, 255);
+        }
+        input{
+            position: relative;
+            width: 50%;
+            left: -9%;
+            font-size: 15px;
+            padding: 5px 0px;
+            border-radius: 5px;
+            border-color:black ;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">My ToDo List</h1>
+    <div id="listbox">
+        <h1 class="l">Dias's List</h1>
+        <div>
+            <input type="text" id="ToDo" placeholder="Add a new ToDo ...">
+            <button id="add">Add</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
