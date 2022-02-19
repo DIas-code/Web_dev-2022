@@ -7,7 +7,7 @@
             text-align: center;
             background:url("img/goodimg.jpg");
             background-size: 100% 721px;
-            margin: 0px;
+            
             
         }
     	#head{
@@ -22,11 +22,11 @@
         }
         #listbox{
             position: absolute;
-            top: 35%;
-            left: 29.87%;
-            height: 50%;
+            top: 25%;
+            left: 19.87%;
+            height: 70%;
             border: 2px solid rgb(104, 0, 0);
-            width: 40%;
+            width: 60%;
             text-align: center;
             border-radius: 10px;
             background-color: rgba(2, 2, 90, 0.637);
@@ -38,19 +38,56 @@
             left: 15%;
             height: 10%;
             border-radius: 5px;
-            font-size: 30px;
-            text-align: left;
+            font-size: 40px;
+            
             background-color: rgba(0, 121, 177, 0.644);
             color: rgb(255, 255, 255);
         }
-        input{
+        #ToDo{
             position: relative;
-            width: 50%;
-            left: -9%;
+            width: 55%;
+            left: -0%;
+            margin-right: 3%;
             font-size: 15px;
-            padding: 5px 0px;
+            padding: 5px 5px;
             border-radius: 5px;
             border-color:black ;
+        }
+        #add{
+            width: 10%;
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .mtd{
+            background-color: rgba(255, 255, 255, 0.39);
+            height: 40px;
+            width: 90%;
+            margin: 10px 5%;
+            padding: 10px 10px 5px;
+            border: 1px solid rgba(255, 255, 255, 0.39);
+            border-radius: 10px;
+            font-family: cursive;
+            font-size: 20px;
+        }
+        .mtd span{
+            text-align: left;
+            float: left;
+        }
+        .mtd button{
+            background-image: url(img/Trash-alt-icon-vector-01.svg);
+            height: 100%;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            float: right;
+        }
+        .mtd input{
+            margin-bottom: 0px;
+            margin-top: 6px;
+            float:left;
         }
     </style>
 </head>
@@ -61,9 +98,35 @@
         <div>
             <input type="text" id="ToDo" placeholder="Add a new ToDo ...">
             <button id="add">Add</button>
+
+            <div id="todolist"></div>
         </div>
     </div>
-    
+    <script>
+        document.querySelector("#add").onclick = function(){
+            if(document.querySelector("#ToDo").value.length==0){
+                alert("Hey there is nothing todo");
+            }
+            else{
+                document.querySelector('#todolist').innerHTML+=`
+                <div class="mtd">
+                    <input type="checkbox" style="width:1.5em;height:1.5em;">
+                    <span>
+                    ${document.querySelector('#ToDo').value}
+                    </span>
+                    <button class="delete"></button>
+                </div>
+                
+                `;
+            }
+            let todeletetask = document.querySelectorAll(".delete");
+            for(let i=0;i<todeletetask.length;i++){
+                todeletetask[i].onclick=function(){
+                    this.parentNode.remove();
+                }
+            } 
+        }
+    </script>
     
 </body>
 </html>
