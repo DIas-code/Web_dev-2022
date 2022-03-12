@@ -1,18 +1,14 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
     <h3>
-        <a [title]="product.name + ' details'">
+        <a [title]="product.name + ' details'"
+           [routerLink]="['/products', product.id]"
+        >
             {{product.name}}
         </a>
     </h3>
-    <p *ngIf="product.description">
-        
-        <img alt="product" src='{{product.imageSRC}}'>
-        <br>
-        Description: {{product.description}}<br>
-        Raiting: <img id='star'src="https://cms-assets.tutsplus.com/uploads/users/34/posts/30118/preview_image/star-rating.jpg" >
-        {{product.rating}}
-    </p>
+    <app-product-item [product]="product"></app-product-item>
+
     <a href='{{product.link}}' >
         <button type="button" class="btn">Link </button></a>
 
@@ -21,8 +17,8 @@
     </button></a>
     <app-product-alerts [product]="product" (notify)="onNotify()">
     </app-product-alerts>
-</div>
 
+</div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

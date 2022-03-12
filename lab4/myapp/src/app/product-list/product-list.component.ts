@@ -9,7 +9,6 @@ import { products } from '../products';
 })
 export class ProductListComponent {
   products = products;
-  pi: any;
 
   share() {
     window.alert('The product has been shared!');
