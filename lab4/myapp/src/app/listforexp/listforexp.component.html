@@ -7,10 +7,11 @@
             {{product.name}}
         </a>
     </h3>
-    <app-product-item [product]="product"></app-product-item>
+    <app-product-item [product]="product"
+    (remove)="PrRemove($event)"></app-product-item>
     <a href='{{product.link}}' >
         <button type="button" class="btn">Link </button></a>
-
+    <app-like></app-like>
     <a href="{{product.href}}"><button type="button" (click)="share()">
         Share via tg
     </button></a>

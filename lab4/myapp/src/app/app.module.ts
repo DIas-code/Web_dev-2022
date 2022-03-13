@@ -19,6 +19,7 @@ import { ListforexpComponent } from './listforexp/listforexp.component';
 import { PhonecategoriesComponent } from './phonecategories/phonecategories.component';
 import { OthecategoriesComponent } from './othecategories/othecategories.component';
 import { TechcategoriesComponent } from './techcategories/techcategories.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import { TechcategoriesComponent } from './techcategories/techcategories.compone
     PhonecategoriesComponent,
     OthecategoriesComponent,
     TechcategoriesComponent,
+    LikeComponent,
   ],
   bootstrap: [
     AppComponent

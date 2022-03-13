@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Product} from "../products";
 
 
@@ -10,6 +10,10 @@ import {Product} from "../products";
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
+  @Output() remove = new EventEmitter;
+  removeProduct(index: number){
+    this.remove.emit(index);
+  }
   constructor(
   ) { }
 
