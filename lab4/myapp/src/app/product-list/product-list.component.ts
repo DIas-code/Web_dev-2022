@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
-import { products } from '../products';
+import { products, Product } from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +9,7 @@ import { products } from '../products';
 })
 export class ProductListComponent {
   products = products;
-
+  @Input() product!: Product;
   share() {
     window.alert('The product has been shared!');
   }

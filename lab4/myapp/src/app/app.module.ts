@@ -12,6 +12,13 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { HttpClientModule} from "@angular/common/http";
 import { ShippingComponent } from './shipping/shipping.component';
+import { CategoriesComponent } from './categories/categories.component';
+import {products} from "./products";
+import { LapcategoriesComponent } from './lapcategories/lapcategories.component';
+import { ListforexpComponent } from './listforexp/listforexp.component';
+import { PhonecategoriesComponent } from './phonecategories/phonecategories.component';
+import { OthecategoriesComponent } from './othecategories/othecategories.component';
+import { TechcategoriesComponent } from './techcategories/techcategories.component';
 
 @NgModule({
   imports: [
@@ -19,12 +26,17 @@ import { ShippingComponent } from './shipping/shipping.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      {path: '',component: CategoriesComponent},
+      { path: 'productlist', component: ProductListComponent },
       {path: 'products/:productId',
         component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent },
       {path: 'shipping', component:ShippingComponent},
-      {path:'products/:productId', component: ProductItemComponent}
+      {path:'products/:productId', component: ProductItemComponent},
+      {path: 'lapcat',component: LapcategoriesComponent},
+      {path: 'techaccesories',component: TechcategoriesComponent},
+      {path: 'smartphones',component: PhonecategoriesComponent},
+      {path: 'other',component: OthecategoriesComponent},
     ])
   ],
   declarations: [
@@ -36,6 +48,12 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    CategoriesComponent,
+    LapcategoriesComponent,
+    ListforexpComponent,
+    PhonecategoriesComponent,
+    OthecategoriesComponent,
+    TechcategoriesComponent,
   ],
   bootstrap: [
     AppComponent

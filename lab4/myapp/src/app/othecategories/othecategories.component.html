@@ -1,0 +1,8 @@
+<h1>Other category</h1>
+<h2>Products</h2>
+<div *ngFor="let product of products">
+    <!--    <app-product-item [product]="product" *ngIf="product.category==='laptops'">-->
+    <app-listforexp [product]="product" *ngIf="product.category==='other'"></app-listforexp>
+    <!--    </app-product-item>-->
+    <!--    <app-product-list [product]="product" *ngIf="product.category==='laptops'"></app-product-list>-->
+</div>
