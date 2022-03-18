@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Albums} from "./fakes";
 import {Observable, of} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Album} from "./models";
+import {Album, Photo} from "./models";
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +23,21 @@ export class AlbumsService {
   getAlbum(id:number): Observable<Album>{
     return this.client.get<Album>(`${this.j_url}/albums/${id}`)
   }
-  deleteAlbum(id:number):Observable<any>{
-    return this.client.delete(`${this.j_url}/albums/${id}`)
-  }
+
   updateAlbum(album:Album):Observable<Album>{
     // @ts-ignore
     return this.client.put(`${this.j_url}/albums/${album.id}`,album);
+  }
+  addAlbum(album: Album):Observable<Album>{
+    // @ts-ignore
+    return this.client.album(`${this.j_url}/albums`, album)
+  }
+
+  deleteAlbum(id:number):Observable<any>{
+    return this.client.delete(`${this.j_url}/albums/${id}`)
+  }
+  getAlbumPhotos(id: number):Observable<Photo[]>{
+    // @ts-ignore
+    return this.client.get(`${this.j_url}/albums/${id}/photos`)
   }
 }

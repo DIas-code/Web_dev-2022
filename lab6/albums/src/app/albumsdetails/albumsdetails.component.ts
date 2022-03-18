@@ -43,7 +43,7 @@ export class AlbumsdetailsComponent implements OnInit {
   updateAlbum(){
     this.loaded=false;
     this.albumsService.updateAlbum(this.album).subscribe((album)=>{
-      console.log(album)
+      console.log(album);
       this.loaded=true;
     })
 
