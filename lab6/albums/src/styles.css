@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.delete{
+  background-image: url("./imges/trash.jpg");
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: 3px;
+  top: 3px;
+  width: 20px;
+  height: 16px;
+}
