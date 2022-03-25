@@ -12,10 +12,11 @@ const routes: Routes = [
   {path: 'about', component:AboutComponent},
   {path:'albums', component: AlbumsComponent},
   {path: 'albums/:id', component:AlbumsdetailsComponent},
-  {path: 'albums/:id/photos', component: PhotosComponent},
-  {path: 'albums/:id/albums/:id/photos', redirectTo:'albums/:id/photos',pathMatch:'full'},
+  {path: 'albums/:id/photos', component:PhotosComponent},
+  {path: 'albums/:id/albums/:id/photos', redirectTo:'albums/:id/photos', pathMatch:'full'},
   {path: '', redirectTo:'home', pathMatch:'full'},
   {path:'**', component: NotFoundComponent},
+
 ];
 
 @NgModule({

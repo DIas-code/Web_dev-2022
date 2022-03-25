@@ -36,8 +36,9 @@ export class AlbumsService {
   deleteAlbum(id:number):Observable<any>{
     return this.client.delete(`${this.j_url}/albums/${id}`)
   }
-  getAlbumPhotos(id: number):Observable<Photo[]>{
+
+  getAlbumPhotos(id: number): Observable<Photo[]>{
     // @ts-ignore
-    return this.client.get(`${this.j_url}/albums/${id}/photos`)
+    return this.client.get<Photo[]>(`${this.j_url}/albums/${id}/photos`)
   }
 }
