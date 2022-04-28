@@ -1,0 +1,10 @@
+<h1>Vacancies</h1>
+
+<ul>
+  <li *ngFor="let v of vacancies">
+    <p>
+      id: {{v.id}}, name: {{v.name}}
+      <a routerLink="/vacancy/{{v.id}}"><button>DETAILS</button></a>
+    </p>
+  </li>
+</ul>

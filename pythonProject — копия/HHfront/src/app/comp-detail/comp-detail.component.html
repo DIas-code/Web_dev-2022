@@ -1,0 +1,8 @@
+<h1>Company Detail</h1>
+<div *ngIf="company">
+  <h4>{{company.name}}</h4>
+  <p>{{company.description}}</p>
+  <p>{{company.city}}</p>
+  <p>{{company.address}}</p>
+  <a routerLink="/company/{{company.id}}/vacancies"><button>CV</button></a>
+</div>
